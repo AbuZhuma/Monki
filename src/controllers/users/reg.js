@@ -5,6 +5,8 @@ const User = require("../../models/user")
 const register = async(req, res) => {
       try {
             const body = req.body
+            console.log(body);
+            
             if(!body || !body.username || !body.password){
                   res.status(501).send("Check you`r fields!")
                   return
@@ -23,9 +25,11 @@ const register = async(req, res) => {
             const newUser = new User(options)
             newUser.save()
             if(newUser){
-               return res.status(200).send("User registered!")   
+               return res.status(200).json({
+                  message: "User registered!"
+               })  
             }
-            res.status(200).send("Please try again later!")
+            res.status(400).send("Please try again later!")
       } catch (error) {
             res.status(501).send(error)
       }

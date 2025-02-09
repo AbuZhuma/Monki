@@ -41,7 +41,6 @@ app.use('/api/chat/', chat)
 
 const clients = [];
 wss.on('connection', (ws) => {
-  // console.log('New client connected');
   clients.push(ws);
 
   ws.on('message', async(message) => {
