@@ -1,4 +1,4 @@
-Hellooo gus!
+Hellooo guys!
 Wellcome to Monki :3
 
 Monki it's just simple app for realize all my minds end ideas.
